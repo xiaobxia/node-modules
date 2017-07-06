@@ -3,7 +3,7 @@
  */
 
 let mailOptions = {
-    //格式 name<mail>
+    //格式 name<mail>,发件人的名字<邮箱>
     from: '"Fred Foo" <chenlingjie@cd121.com>',
     //发送的
     to: '673806687@qq.com',
@@ -17,7 +17,7 @@ let mailOptions = {
     //纯文本
     text: 'Hello world ?',
     //html
-    html: '<b>Hello world ?</b>'
+    html: '<b>Hello world ? 👮</b>'
 };
 
 //附件部分

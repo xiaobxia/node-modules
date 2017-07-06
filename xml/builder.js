@@ -51,6 +51,7 @@ const fs = require('fs');
 
 
 const builder = require('xmlbuilder');
+//feedObj = JSON.parse(fs.readFileSync(__dirname+'/feed.json'));
 let feed = builder.create(feedObj, { encoding: 'utf-8' });
 fs.writeFile(__dirname+'/rss.xml',feed.end({pretty:true}),function (error) {
     console.log('error:',error)
