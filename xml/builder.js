@@ -1,9 +1,6 @@
 /**
  * Created by xiaobxia on 2017/7/6.
  */
-const builder = require('xmlbuilder');
-const fs = require('fs');
-
 let feedObj = {
     'feed': {
         '@xmlns': 'http://www.w3.org/2005/Atom',
@@ -50,6 +47,10 @@ let feedObj = {
     }
 };
 
+const fs = require('fs');
+
+
+const builder = require('xmlbuilder');
 let feed = builder.create(feedObj, { encoding: 'utf-8' });
 fs.writeFile(__dirname+'/rss.xml',feed.end({pretty:true}),function (error) {
     console.log('error:',error)
