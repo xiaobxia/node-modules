@@ -5,7 +5,7 @@
  * 给浏览器使用，服务端负责生成token
  */
 const qiniu = require('qiniu');
-const config = require('./config');
+const config = require('./../config');
 //1.创建鉴权对象
 const accessKey = config.accessKey;
 const secretKey = config.secretKey;
