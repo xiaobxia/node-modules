@@ -4,5 +4,6 @@
 module.exports = {
     accessKey: 'mE_KVunTNvnBqk70urXj6IPwA7AkF0f7n_ge6ljt',
     secretKey: 'cuRZJGuJ-FaHanoLznTjEypr-_KIRQZHZAkImZlt',
-    bucket: 'xbx-test'
+    bucket: 'xbx-test',
+    domain: 'http://oqrmjnor1.bkt.clouddn.com/'
 };

@@ -35,8 +35,8 @@ UploadConfig.zone = qiniu.zone.Zone_z2;
 let formUploader = new qiniu.form_up.FormUploader(UploadConfig);
 let putExtra = new qiniu.form_up.PutExtra();
 
-//传字节
-// formUploader.put(uploadToken, null, "hello", null, function(respErr, respBody, respInfo) {
+//传字节,hello就是内容，key就是文件名
+// formUploader.put(uploadToken, key, "hello", null, function(respErr, respBody, respInfo) {
 //     if (respErr) {
 //         throw respErr;
 //     }
