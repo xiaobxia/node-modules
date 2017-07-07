@@ -3,6 +3,7 @@
     "htmlparser2": "^3.9.2",
     "node-feedparser": "^1.0.1",
     "nodemailer": "^4.0.1",
+    "qiniu": "^7.0.4",
     "xml2js": "^0.4.17",
     "xmlbuilder": "^9.0.1"
   }
