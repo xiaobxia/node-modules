@@ -16,6 +16,7 @@ app.post('/profile', function (req, res, next) {
         console.log(err)
         console.log(fields)
         console.log(files)
+        //需要对文件重命名
         res.end('ok')
     })
 });
