@@ -4,8 +4,8 @@
 /**
  * 用于性能测试
  */
-var Benchmark = require('benchmark');
-var suite = new Benchmark.Suite;
+const Benchmark = require('benchmark');
+let suite = new Benchmark.Suite;
 let list = [1,2,3,4,5];
 let tempValue = 0;
 // add tests

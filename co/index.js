@@ -1,7 +1,7 @@
 /**
  * Created by xiaobxia on 2017/7/10.
  */
-var co = require('co');
+const co = require('co');
 /**
  * co和co之间是并行得
  */
@@ -13,7 +13,7 @@ co(function *() {
             resolve(1111)
         }, 1000);
     });
-    console.log('use time : ', (new Date()).getTime() - startTime)
+    console.log('use time : ', (new Date()).getTime() - startTime);
     console.log(result)
 }).catch(onerror);
 
