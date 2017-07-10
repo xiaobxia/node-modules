@@ -4,7 +4,8 @@
 /**
  * 默认情况下，不需要add，就会有tap，doubletap，press，pinch，rotate，pan，swipe
  */
-var hammertime = new Hammer(myElement, myOptions);
+var myElement = document.getElementById('one');
+var hammertime = new Hammer(myElement);
 hammertime.on('pan', function (ev) {
     console.log(ev);
 });
@@ -16,7 +17,7 @@ hammertime.get('pan').set({direction: Hammer.DIRECTION_ALL});
 hammertime.get('swipe').set({direction: Hammer.DIRECTION_VERTICAL});
 
 //也可以通过add进行设置，在manager对象下
-var mc = new Hammer.Manager(myElement, myOptions);
+var mc = new Hammer.Manager(myElement);
 
 mc.add(new Hammer.Pan({direction: Hammer.DIRECTION_ALL, threshold: 0}));
 mc.add(new Hammer.Tap({event: 'quadrupletap', taps: 4}));
