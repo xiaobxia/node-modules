@@ -18,7 +18,6 @@ co(function *() {
 }).catch(onerror);
 
 co(function *() {
-    //测试发现是有性能损失的
     let startTime = (new Date()).getTime();
     //加了yield就是串行的
     let a = yield new Promise(function (resolve, reject) {
