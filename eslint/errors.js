@@ -29,6 +29,7 @@ module.exports = {
      * }
      * ```
      */
+    //在条件表达式当中禁止运算符
     'no-cond-assign': [ 'error', 'except-parens' ],
 
     /**
@@ -41,6 +42,7 @@ module.exports = {
      * disallow use of constant expressions in conditions
      * @see http://eslint.org/docs/rules/no-constant-condition
      */
+    //禁止if(a),这样的表达
     'no-constant-condition': 'error',
 
     /**
@@ -59,30 +61,35 @@ module.exports = {
      * disallow duplicate arguments in functions
      * @see http://eslint.org/docs/rules/no-dupe-args
      */
+    //禁止重复定义参数
     'no-dupe-args': 'error',
 
     /**
      * disallow duplicate keys when creating object literals
      * @see http://eslint.org/docs/rules/no-dupe-keys
      */
+    //禁止在对象中重复定义key
     'no-dupe-keys': 'error',
 
     /**
      * disallow a duplicate case label.
      * @see http://eslint.org/docs/rules/no-duplicate-case
      */
+    //禁止在case中出现重复
     'no-duplicate-case': 'error',
 
     /**
      * disallow empty statements
      * @see http://eslint.org/docs/rules/no-empty
      */
+    //禁止块语句内为空
     'no-empty': 'error',
 
     /**
      * disallow the use of empty character classes in regular expressions
      * @see http://eslint.org/docs/rules/no-empty-character-class
      */
+    //禁止正则中的空字符类
     'no-empty-character-class': 'error',
 
     /**
@@ -95,6 +102,7 @@ module.exports = {
      * disallow double-negation boolean casts in a boolean context
      * @see http://eslint.org/docs/rules/no-extra-boolean-cast
      */
+    //禁止多余的判断，如!!!a
     'no-extra-boolean-cast': 'error',
 
     /**
@@ -118,6 +126,7 @@ module.exports = {
      * disallow unnecessary semicolons
      * @see http://eslint.org/docs/rules/no-extra-semi
      */
+    // 禁止不必要的分号
     'no-extra-semi': 'error',
 
     /**
@@ -208,5 +217,7 @@ module.exports = {
      * @see http://eslint.org/docs/rules/valid-typeof
      */
     'valid-typeof': 'off',
+    //不能与-0比较
+    'no-compare-neg-zero': 'error'
   },
 };

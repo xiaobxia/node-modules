@@ -45,18 +45,21 @@ module.exports = {
      * }
      * ```
      */
+    //控制if后面的在同一行
     'brace-style': [ 'error', '1tbs', { allowSingleLine: true }],
 
     /**
      * not require camel case names
      * @see http://eslint.org/docs/rules/camelcase
      */
+    //不强制驼峰命名
     camelcase: 'off',
 
     /**
      * enforce spacing before and after comma
      * @see http://eslint.org/docs/rules/comma-spacing
      */
+    // 控制逗号前后的空格
     'comma-spacing': [ 'error', { before: false, after: true }],
 
     /**
@@ -85,6 +88,7 @@ module.exports = {
      * }
      * ```
      */
+    // 控制逗号在行尾出现还是在行首出现
     'comma-style': [ 'error', 'last' ],
 
     /**
@@ -140,18 +144,21 @@ module.exports = {
      * this option sets a specific tab width for your code
      * @see http://eslint.org/docs/rules/indent
      */
+    // 空格2个
     indent: [ 'error', 2, { SwitchCase: 1, VariableDeclarator: 1 }],
 
     /**
      * enforces spacing between keys and values in object literal properties
      * @see http://eslint.org/docs/rules/key-spacing
      */
+    //对象中的key，value的空格
     'key-spacing': [ 'error', { beforeColon: false, afterColon: true }],
 
     /**
      * require a space before & after certain keywords
      * @see http://eslint.org/docs/rules/keyword-spacing
      */
+    //关键词的空格
     'keyword-spacing': [ 'error', {
       before: true,
       after: true,
@@ -166,6 +173,7 @@ module.exports = {
      * enforces the usage of Unix line endings: \n for LF
      * @see http://eslint.org/docs/rules/linebreak-style
      */
+    // 强制使用一致的换行风格
     'linebreak-style': [ 'error', 'unix' ],
 
     /**
@@ -425,6 +433,7 @@ module.exports = {
      * specify whether double or single quotes should be used
      * @see http://eslint.org/docs/rules/quotes
      */
+    // 强制使用单引号
     quotes: [ 'error', 'single', { avoidEscape: true }],
 
     /**
@@ -437,6 +446,7 @@ module.exports = {
      * disallow use of semicolons instead of ASI
      * @see http://eslint.org/docs/rules/semi
      */
+    // 可以使用分号代替ASI
     semi: [ 'error', 'always' ],
 
     /**

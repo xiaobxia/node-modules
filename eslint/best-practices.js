@@ -25,6 +25,7 @@ module.exports = {
      * ```
      * @see http://eslint.org/docs/rules/array-callback-return
      */
+    //在array的es5方法中强制要有return语句
     'array-callback-return': 'error',
 
     /**
@@ -33,12 +34,14 @@ module.exports = {
      * @see http://eslint.org/docs/rules/block-scoped-var
      * @since 3.0.0
      */
+    // 在块级作用域外访问块内定义的变量报错
     'block-scoped-var': 'error',
 
     /**
      * Doesn't limit cyclomatic complexity
      * @see http://eslint.org/docs/rules/complexity
      */
+    //不限制循环的复杂度
     complexity: 'off',
 
     /**
@@ -55,6 +58,7 @@ module.exports = {
      * }
      * ```
      */
+    //对return不做限制
     'consistent-return': 'off',
 
     /**
@@ -84,6 +88,7 @@ module.exports = {
      * while (foo);
      * ```
      */
+    //要遵循大括号的约定
     curly: [ 'error', 'multi-line' ],
 
     /**
@@ -109,6 +114,7 @@ module.exports = {
      * }
      * ```
      */
+    //在switch中不要有default
     'default-case': [ 'error', { commentPattern: '^no default$' }],
 
     /**
@@ -130,6 +136,7 @@ module.exports = {
      * const foo = bar['class'];
      * ```
      */
+    //尽量使用点
     'dot-notation': [ 'error', { allowKeywords: true }],
 
     /**
@@ -146,6 +153,7 @@ module.exports = {
      *         .bar;
      * ```
      */
+    //不强制点是否可以出现在行的开头
     'dot-location': 'off',
 
     /**
@@ -180,6 +188,7 @@ module.exports = {
      * true == true
      * ```
      */
+    //强制使用全等，除了null
     eqeqeq: [ 'error', 'allow-null' ],
 
     /**

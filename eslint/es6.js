@@ -145,6 +145,7 @@ module.exports = {
      * require `let` or `const` instead of `var`
      * @see http://eslint.org/docs/rules/no-var
      */
+    //禁止使用var
     'no-var': 'error',
 
     /**
