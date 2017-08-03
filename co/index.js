@@ -1,7 +1,7 @@
 /**
  * Created by xiaobxia on 2017/7/10.
  */
-const co = require('co');
+const co = require('./sourceCode');
 /**
  * co和co之间是并行得
  */
