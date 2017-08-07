@@ -54,13 +54,13 @@ mailOptions.envelope = {
     // bcc:
 };
 
-mailOptions.list={
+mailOptions.list = {
     // List-Help: <mailto:admin@example.com?subject=help>
     help: 'admin@example.com?subject=help',
-        // List-Unsubscribe: <http://example.com> (Comment)
-        unsubscribe: {
+    // List-Unsubscribe: <http://example.com> (Comment)
+    unsubscribe: {
         url: 'http://example.com',
-            comment: 'Comment'
+        comment: 'Comment'
     },
     // List-Subscribe: <mailto:admin@example.com?subject=subscribe>
     // List-Subscribe: <http://example.com> (Subscribe)
@@ -71,8 +71,8 @@ mailOptions.list={
             comment: 'Subscribe'
         }
     ],
-        // List-Post: <http://example.com/post>, <mailto:admin@example.com?subject=post> (Post)
-        post: [
+    // List-Post: <http://example.com/post>, <mailto:admin@example.com?subject=post> (Post)
+    post: [
         [
             'http://example.com/post',
             {
@@ -83,11 +83,11 @@ mailOptions.list={
     ]
 };
 
-mailOptions. headers= {
+mailOptions.headers = {
     'x-processed': 'a really long header or value with non-ascii characters 👮',
-        'x-unprocessed': {
+    'x-unprocessed': {
         prepared: true,
-            value: 'a really long header or value with non-ascii characters 👮'
+        value: 'a really long header or value with non-ascii characters 👮'
     }
 };
 
