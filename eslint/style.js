@@ -7,7 +7,7 @@ module.exports = {
      * @see http://eslint.org/docs/rules/array-bracket-spacing
      * @since 3.0.0
      */
-    'array-bracket-spacing': [ 'error', 'always', {
+    'array-bracket-spacing': ['error', 'always', {
       objectsInArrays: false,
       arraysInArrays: false,
     }],
@@ -16,7 +16,7 @@ module.exports = {
      * enforce spaces inside of single line blocks
      * @see http://eslint.org/docs/rules/block-spacing
      */
-    'block-spacing': [ 'error', 'always' ],
+    'block-spacing': ['error', 'always'],
 
     /**
      * @see http://eslint.org/docs/rules/brace-style
@@ -46,7 +46,7 @@ module.exports = {
      * ```
      */
     //控制if后面的在同一行
-    'brace-style': [ 'error', '1tbs', { allowSingleLine: true }],
+    'brace-style': ['error', '1tbs', {allowSingleLine: true}],
 
     /**
      * not require camel case names
@@ -60,7 +60,7 @@ module.exports = {
      * @see http://eslint.org/docs/rules/comma-spacing
      */
     // 控制逗号前后的空格
-    'comma-spacing': [ 'error', { before: false, after: true }],
+    'comma-spacing': ['error', {before: false, after: true}],
 
     /**
      * enforce one true comma style
@@ -89,7 +89,7 @@ module.exports = {
      * ```
      */
     // 控制逗号在行尾出现还是在行首出现
-    'comma-style': [ 'error', 'last' ],
+    'comma-style': ['error', 'last'],
 
     /**
      * allow padding inside computed properties
@@ -145,27 +145,27 @@ module.exports = {
      * @see http://eslint.org/docs/rules/indent
      */
     // 空格2个
-    indent: [ 'error', 2, { SwitchCase: 1, VariableDeclarator: 1 }],
+    indent: ['error', 2, {SwitchCase: 1, VariableDeclarator: 1}],
 
     /**
      * enforces spacing between keys and values in object literal properties
      * @see http://eslint.org/docs/rules/key-spacing
      */
     //对象中的key，value的空格
-    'key-spacing': [ 'error', { beforeColon: false, afterColon: true }],
+    'key-spacing': ['error', {beforeColon: false, afterColon: true}],
 
     /**
      * require a space before & after certain keywords
      * @see http://eslint.org/docs/rules/keyword-spacing
      */
     //关键词的空格
-    'keyword-spacing': [ 'error', {
+    'keyword-spacing': ['error', {
       before: true,
       after: true,
       overrides: {
-        return: { after: true },
-        throw: { after: true },
-        case: { after: true },
+        return: {after: true},
+        throw: {after: true},
+        case: {after: true},
       },
     }],
 
@@ -174,7 +174,7 @@ module.exports = {
      * @see http://eslint.org/docs/rules/linebreak-style
      */
     // 强制使用一致的换行风格
-    'linebreak-style': [ 'error', 'unix' ],
+    'linebreak-style': ['error', 'unix'],
 
     /**
      * not enforces empty lines around comments
@@ -247,7 +247,7 @@ module.exports = {
      * enforces new line after each method call in the chain to make it
      * more readable and easy to maintain
      */
-    'newline-per-chained-call': [ 'error', { ignoreChainWithDepth: 3 }],
+    'newline-per-chained-call': ['error', {ignoreChainWithDepth: 3}],
 
     /**
      * disallow use of the Array constructor
@@ -283,14 +283,14 @@ module.exports = {
      * disallow mixed spaces and tabs for indentation
      * @see http://eslint.org/docs/rules/no-mixed-spaces-and-tabs
      */
-    'no-mixed-spaces-and-tabs': [ 'error', false ],
+    'no-mixed-spaces-and-tabs': ['error', false],
 
     /**
      * disallow multiple empty lines and only one newline at the end
      * @see http://eslint.org/docs/rules/no-multiple-empty-lines
      * @since 3.0.0
      */
-    'no-multiple-empty-lines': [ 'error', { max: 2, maxEOF: 1 }],
+    'no-multiple-empty-lines': ['error', {max: 2, maxEOF: 1}],
 
     /**
      * allow negated conditions
@@ -384,7 +384,7 @@ module.exports = {
      * };
      * ```
      */
-    'object-curly-spacing': [ 'error', 'always' ],
+    'object-curly-spacing': ['error', 'always'],
 
     /**
      * not enforce "same line" or "multiple line" on object properties.
@@ -403,7 +403,7 @@ module.exports = {
      * @see http://eslint.org/docs/rules/one-var-declaration-per-line
      * @since 3.0.0
      */
-    'one-var-declaration-per-line': [ 'error', 'always' ],
+    'one-var-declaration-per-line': ['error', 'always'],
 
     /**
      * not require assignment operator shorthand where possible or prohibit it entirely
@@ -427,14 +427,14 @@ module.exports = {
      * not require quotes around object literal property names
      * @see http://eslint.org/docs/rules/quote-props
      */
-    'quote-props': [ 'error', 'as-needed', { keywords: false }],
+    'quote-props': ['error', 'as-needed', {keywords: false}],
 
     /**
      * specify whether double or single quotes should be used
      * @see http://eslint.org/docs/rules/quotes
      */
     // 强制使用单引号
-    quotes: [ 'error', 'single', { avoidEscape: true }],
+    quotes: ['error', 'single', {avoidEscape: true}],
 
     /**
      * do not require jsdoc
@@ -447,13 +447,13 @@ module.exports = {
      * @see http://eslint.org/docs/rules/semi
      */
     // 可以使用分号代替ASI
-    semi: [ 'error', 'always' ],
+    semi: ['error', 'always'],
 
     /**
      * enforce spacing before and after semicolons
      * @see http://eslint.org/docs/rules/semi-spacing
      */
-    'semi-spacing': [ 'error', { before: false, after: true }],
+    'semi-spacing': ['error', {before: false, after: true}],
 
     /**
      * not sort variables within the same declaration block
@@ -471,7 +471,7 @@ module.exports = {
      * require or disallow space before function opening parenthesis
      * @see http://eslint.org/docs/rules/space-before-function-paren
      */
-    'space-before-function-paren': [ 'error', {
+    'space-before-function-paren': ['error', {
       anonymous: 'never',
       named: 'never',
     }],
@@ -480,7 +480,7 @@ module.exports = {
      * require or disallow spaces inside parentheses
      * @see http://eslint.org/docs/rules/space-in-parens
      */
-    'space-in-parens': [ 'error', 'never' ],
+    'space-in-parens': ['error', 'never'],
 
     /**
      * require spaces around operators
@@ -492,7 +492,7 @@ module.exports = {
      * Require spaces before/after unary operators
      * @see http://eslint.org/docs/rules/space-unary-ops
      */
-    'space-unary-ops': [ 'error', {
+    'space-unary-ops': ['error', {
       words: true,
       nonwords: false,
     }],
@@ -501,9 +501,9 @@ module.exports = {
      * require or disallow a space immediately following the // or /* in a comment
      * @see http://eslint.org/docs/rules/spaced-comment
      */
-    'spaced-comment': [ 'error', 'always', {
-      exceptions: [ '-', '+' ],
-      markers: [ '*!' ],
+    'spaced-comment': ['error', 'always', {
+      exceptions: ['-', '+'],
+      markers: ['*!'],
     }],
 
     /**

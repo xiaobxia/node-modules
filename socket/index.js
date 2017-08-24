@@ -4,15 +4,15 @@
 let app = require('express')();
 let server = require('http').Server(app);
 let io = require('socket.io')(server, {
-    // path: '/test',
-    //是否提供客户端文件
-    // serveClient: false,
-    // 适配器
-    // adapte
-    //来源
-    origins: null
-    // 解析
-    // parser
+  // path: '/test',
+  //是否提供客户端文件
+  // serveClient: false,
+  // 适配器
+  // adapte
+  //来源
+  origins: null
+  // 解析
+  // parser
 });
 //也可以通过io.path();来配置
 //在express下工作有影响，而且origin难以确定
@@ -35,10 +35,10 @@ server.listen(80);
 //     res.sendfile(__dirname + '/page/index.html');
 // });
 io.on('connection', function (socket) {
-    socket.emit('news', {hello: 'world'});
-    socket.on('my other event', function (data) {
-        console.log(data);
-    });
+  socket.emit('news', {hello: 'world'});
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
 });
 
 // io.on('connection', (socket) => {

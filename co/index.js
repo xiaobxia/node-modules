@@ -31,29 +31,29 @@ const co = require('./sourceCode');
 //     console.log('ooooo')
 // });
 
-var fn = co.wrap(function* () {
-    let startTime = (new Date()).getTime();
-    try {
-        let result = yield new Promise(function (resolve, reject) {
-            setTimeout(function () {
-                resolve(1111)
-            }, 1000);
-        });
-        let c = yield new Promise(function (resolve, reject) {
-            setTimeout(function () {
-                resolve('ccccc')
-            }, 1000);
-        });
-        console.log('use time : ', (new Date()).getTime() - startTime);
-        console.log(result)
-    } catch (err){
-        //被捕捉以后外面就捕捉不到了
-        console.log('catch')
-    }
+var fn = co.wrap(function*() {
+  let startTime = (new Date()).getTime();
+  try {
+    let result = yield new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve(1111)
+      }, 1000);
+    });
+    let c = yield new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve('ccccc')
+      }, 1000);
+    });
+    console.log('use time : ', (new Date()).getTime() - startTime);
+    console.log(result)
+  } catch (err) {
+    //被捕捉以后外面就捕捉不到了
+    console.log('catch')
+  }
 });
 
-fn().then((re)=>{
-    console.log('re',re)
+fn().then((re) => {
+  console.log('re', re)
 }).catch(onerror);
 
 //
@@ -124,9 +124,9 @@ fn().then((re)=>{
 // }).catch(onerror);
 
 function onerror(err) {
-    // log any uncaught errors
-    // co will not throw any errors you do not handle!!!
-    // HANDLE ALL YOUR ERRORS!!!
-    console.log('in')
-    console.error(err.stack);
+  // log any uncaught errors
+  // co will not throw any errors you do not handle!!!
+  // HANDLE ALL YOUR ERRORS!!!
+  console.log('in')
+  console.error(err.stack);
 }

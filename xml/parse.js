@@ -15,16 +15,16 @@ const xml2js = require('xml2js');
 
 //let parser = new xml2js.Parser({explicitArray : false});
 let parser = new xml2js.Parser({
-    attrkey: '@',
-    charkey: '#',
-    explicitArray: false,
-    explicitCharkey: true,
-    mergeAttrs: true
+  attrkey: '@',
+  charkey: '#',
+  explicitArray: false,
+  explicitCharkey: true,
+  mergeAttrs: true
 });
 fs.readFile(__dirname + '/rss.xml', function (err, data) {
-    parser.parseString(data, function (err, result) {
-        fs.writeFile(__dirname + '/feed.json', JSON.stringify(result), function (error) {
-            console.log('error:', error)
-        });
+  parser.parseString(data, function (err, result) {
+    fs.writeFile(__dirname + '/feed.json', JSON.stringify(result), function (error) {
+      console.log('error:', error)
     });
+  });
 });

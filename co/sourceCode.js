@@ -17,11 +17,11 @@ module.exports = co['default'] = co.co = co;
  */
 
 co.wrap = function (fn) {
-    createPromise.__generatorFunction__ = fn;
-    return createPromise;
-    function createPromise() {
-        return co.call(this, fn.apply(this, arguments));
-    }
+  createPromise.__generatorFunction__ = fn;
+  return createPromise;
+  function createPromise() {
+    return co.call(this, fn.apply(this, arguments));
+  }
 };
 
 /**
@@ -34,83 +34,83 @@ co.wrap = function (fn) {
  */
 
 function co(gen) {
-    var ctx = this;
-    var args = slice.call(arguments, 1);
+  var ctx = this;
+  var args = slice.call(arguments, 1);
 
-    // we wrap everything in a promise to avoid promise chaining,
-    // which leads to memory leak errors.
-    // see https://github.com/tj/co/issues/180
-    return new Promise(function(resolve, reject) {
-        //执行co中的函数，得到it = generator();
-        if (typeof gen === 'function') gen = gen.apply(ctx, args);
-        //如果返回为空或者返回的没有next方法，那么久resolve这个函数的值，返回结束
-        if (!gen || typeof gen.next !== 'function') return resolve(gen);
+  // we wrap everything in a promise to avoid promise chaining,
+  // which leads to memory leak errors.
+  // see https://github.com/tj/co/issues/180
+  return new Promise(function (resolve, reject) {
+    //执行co中的函数，得到it = generator();
+    if (typeof gen === 'function') gen = gen.apply(ctx, args);
+    //如果返回为空或者返回的没有next方法，那么久resolve这个函数的值，返回结束
+    if (!gen || typeof gen.next !== 'function') return resolve(gen);
 
-        onFulfilled();
+    onFulfilled();
 
+    /**
+     * @param {Mixed} res
+     * @return {Promise}
+     * @api private
+     */
+
+    function onFulfilled(res) {
+      var ret;
+      try {
         /**
-         * @param {Mixed} res
-         * @return {Promise}
-         * @api private
+         * let a = yield 2
+         * 如果不在next中传参，a就是undefined,a的值由next()中的参数赋予
          */
-
-        function onFulfilled(res) {
-            var ret;
-            try {
-                /**
-                 * let a = yield 2
-                 * 如果不在next中传参，a就是undefined,a的值由next()中的参数赋予
-                 */
-                //ret是结果
-                /**
-                 * value： promise
-                 * done
-                 */
-                ret = gen.next(res);
-            } catch (e) {
-                return reject(e);
-            }
-            next(ret);
-            return null;
-        }
-
+        //ret是结果
         /**
-         * @param {Error} err
-         * @return {Promise}
-         * @api private
+         * value： promise
+         * done
          */
+        ret = gen.next(res);
+      } catch (e) {
+        return reject(e);
+      }
+      next(ret);
+      return null;
+    }
 
-        function onRejected(err) {
-            var ret;
-            try {
-                ret = gen.throw(err);
-            } catch (e) {
-                return reject(e);
-            }
-            next(ret);
-        }
+    /**
+     * @param {Error} err
+     * @return {Promise}
+     * @api private
+     */
 
-        /**
-         * Get the next value in the generator,
-         * return a promise.
-         *
-         * @param {Object} ret
-         * @return {Promise}
-         * @api private
-         */
+    function onRejected(err) {
+      var ret;
+      try {
+        ret = gen.throw(err);
+      } catch (e) {
+        return reject(e);
+      }
+      next(ret);
+    }
 
-        function next(ret) {
-            //如果是[promise,promise],那就用promise.all()得到值
-            //如果结束了，返回值
-            if (ret.done) return resolve(ret.value);
-            //把value转为promise(一般情况下为promise)
-            var value = toPromise.call(ctx, ret.value);
-            // 把promise中的值给到上次的参数let a
-            if (value && isPromise(value)) return value.then(onFulfilled, onRejected);
-            return onRejected(new TypeError('You may only yield a function, promise, generator, array, or object, '
-                + 'but the following object was passed: "' + String(ret.value) + '"'));
-        }
-    });
+    /**
+     * Get the next value in the generator,
+     * return a promise.
+     *
+     * @param {Object} ret
+     * @return {Promise}
+     * @api private
+     */
+
+    function next(ret) {
+      //如果是[promise,promise],那就用promise.all()得到值
+      //如果结束了，返回值
+      if (ret.done) return resolve(ret.value);
+      //把value转为promise(一般情况下为promise)
+      var value = toPromise.call(ctx, ret.value);
+      // 把promise中的值给到上次的参数let a
+      if (value && isPromise(value)) return value.then(onFulfilled, onRejected);
+      return onRejected(new TypeError('You may only yield a function, promise, generator, array, or object, '
+        + 'but the following object was passed: "' + String(ret.value) + '"'));
+    }
+  });
 }
 
 /**
@@ -122,13 +122,13 @@ function co(gen) {
  */
 
 function toPromise(obj) {
-    if (!obj) return obj;
-    if (isPromise(obj)) return obj;
-    if (isGeneratorFunction(obj) || isGenerator(obj)) return co.call(this, obj);
-    if ('function' == typeof obj) return thunkToPromise.call(this, obj);
-    if (Array.isArray(obj)) return arrayToPromise.call(this, obj);
-    if (isObject(obj)) return objectToPromise.call(this, obj);
-    return obj;
+  if (!obj) return obj;
+  if (isPromise(obj)) return obj;
+  if (isGeneratorFunction(obj) || isGenerator(obj)) return co.call(this, obj);
+  if ('function' == typeof obj) return thunkToPromise.call(this, obj);
+  if (Array.isArray(obj)) return arrayToPromise.call(this, obj);
+  if (isObject(obj)) return objectToPromise.call(this, obj);
+  return obj;
 }
 
 /**
@@ -140,14 +140,14 @@ function toPromise(obj) {
  */
 
 function thunkToPromise(fn) {
-    var ctx = this;
-    return new Promise(function (resolve, reject) {
-        fn.call(ctx, function (err, res) {
-            if (err) return reject(err);
-            if (arguments.length > 2) res = slice.call(arguments, 1);
-            resolve(res);
-        });
+  var ctx = this;
+  return new Promise(function (resolve, reject) {
+    fn.call(ctx, function (err, res) {
+      if (err) return reject(err);
+      if (arguments.length > 2) res = slice.call(arguments, 1);
+      resolve(res);
     });
+  });
 }
 
 /**
@@ -160,7 +160,7 @@ function thunkToPromise(fn) {
  */
 
 function arrayToPromise(obj) {
-    return Promise.all(obj.map(toPromise, this));
+  return Promise.all(obj.map(toPromise, this));
 }
 
 /**
@@ -172,27 +172,27 @@ function arrayToPromise(obj) {
  * @api private
  */
 
-function objectToPromise(obj){
-    var results = new obj.constructor();
-    var keys = Object.keys(obj);
-    var promises = [];
-    for (var i = 0; i < keys.length; i++) {
-        var key = keys[i];
-        var promise = toPromise.call(this, obj[key]);
-        if (promise && isPromise(promise)) defer(promise, key);
-        else results[key] = obj[key];
-    }
-    return Promise.all(promises).then(function () {
-        return results;
-    });
+function objectToPromise(obj) {
+  var results = new obj.constructor();
+  var keys = Object.keys(obj);
+  var promises = [];
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    var promise = toPromise.call(this, obj[key]);
+    if (promise && isPromise(promise)) defer(promise, key);
+    else results[key] = obj[key];
+  }
+  return Promise.all(promises).then(function () {
+    return results;
+  });
 
-    function defer(promise, key) {
-        // predefine the key in the result
-        results[key] = undefined;
-        promises.push(promise.then(function (res) {
-            results[key] = res;
-        }));
-    }
+  function defer(promise, key) {
+    // predefine the key in the result
+    results[key] = undefined;
+    promises.push(promise.then(function (res) {
+      results[key] = res;
+    }));
+  }
 }
 
 /**
@@ -204,7 +204,7 @@ function objectToPromise(obj){
  */
 
 function isPromise(obj) {
-    return 'function' == typeof obj.then;
+  return 'function' == typeof obj.then;
 }
 
 /**
@@ -216,7 +216,7 @@ function isPromise(obj) {
  */
 
 function isGenerator(obj) {
-    return 'function' == typeof obj.next && 'function' == typeof obj.throw;
+  return 'function' == typeof obj.next && 'function' == typeof obj.throw;
 }
 
 /**
@@ -228,10 +228,10 @@ function isGenerator(obj) {
  */
 
 function isGeneratorFunction(obj) {
-    var constructor = obj.constructor;
-    if (!constructor) return false;
-    if ('GeneratorFunction' === constructor.name || 'GeneratorFunction' === constructor.displayName) return true;
-    return isGenerator(constructor.prototype);
+  var constructor = obj.constructor;
+  if (!constructor) return false;
+  if ('GeneratorFunction' === constructor.name || 'GeneratorFunction' === constructor.displayName) return true;
+  return isGenerator(constructor.prototype);
 }
 
 /**
@@ -243,5 +243,5 @@ function isGeneratorFunction(obj) {
  */
 
 function isObject(val) {
-    return Object == val.constructor;
+  return Object == val.constructor;
 }

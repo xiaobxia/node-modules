@@ -7,7 +7,7 @@ module.exports = {
      * @see http://eslint.org/docs/rules/comma-dangle
      * @see http://blog.hotoo.me/post/trailing-commas
      */
-    'comma-dangle': [ 'error', 'always-multiline' ],
+    'comma-dangle': ['error', 'always-multiline'],
 
     /**
      * @see http://eslint.org/docs/rules/no-cond-assign
@@ -30,7 +30,7 @@ module.exports = {
      * ```
      */
     //在条件表达式当中禁止运算符
-    'no-cond-assign': [ 'error', 'except-parens' ],
+    'no-cond-assign': ['error', 'except-parens'],
 
     /**
      * This rule warns the usage of `console`
@@ -120,7 +120,7 @@ module.exports = {
      *
      * @see http://eslint.org/docs/rules/no-extra-parens
      */
-    'no-extra-parens': [ 'error', 'functions' ],
+    'no-extra-parens': ['error', 'functions'],
 
     /**
      * disallow unnecessary semicolons
@@ -139,7 +139,7 @@ module.exports = {
      * disallow function declarations in nested blocks
      * @see http://eslint.org/docs/rules/no-inner-declarations
      */
-    'no-inner-declarations': [ 'error', 'functions' ],
+    'no-inner-declarations': ['error', 'functions'],
 
     /**
      * disallow invalid regular expression strings in the RegExp constructor
@@ -205,7 +205,7 @@ module.exports = {
      * ensure JSDoc comments are valid
      * @see http://eslint.org/docs/rules/valid-jsdoc
      */
-    'valid-jsdoc': [ 'error', {
+    'valid-jsdoc': ['error', {
       prefer: {
         returns: 'return',
       },

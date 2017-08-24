@@ -5,15 +5,15 @@ const mailer = require('nodemailer');
 const message = require('./message');
 //创建一次就可以发很多邮件
 let transporter = mailer.createTransport({
-    //host可以上网查
-    host: 'smtp.mxhichina.com',
-    port: 25,
-    //secure: true, // use TLS
-    auth: {
-        user: 'chenlingjie@cd121.com',
-        pass: 'CLJclj214'
-    },
-    ignoreTLS: true,
+  //host可以上网查
+  host: 'smtp.mxhichina.com',
+  port: 25,
+  //secure: true, // use TLS
+  auth: {
+    user: 'chenlingjie@cd121.com',
+    pass: 'CLJclj214'
+  },
+  ignoreTLS: true,
 });
 
 // let mailOptions = {
@@ -31,8 +31,8 @@ let transporter = mailer.createTransport({
 
 
 transporter.sendMail(message, (error, info) => {
-    if (error) {
-        return console.log(error);
-    }
-    console.log(info);
+  if (error) {
+    return console.log(error);
+  }
+  console.log(info);
 });

@@ -49,13 +49,13 @@ module.exports = {
      * This rule disallows the use of parens when they are no required
      * @see http://eslint.org/docs/rules/arrow-parens
      */
-    'arrow-parens': [ 'error', 'as-needed' ],
+    'arrow-parens': ['error', 'as-needed'],
 
     /**
      * This rule normalize style of spacing before and after an arrow function's arrow(`=>`)
      * @see http://eslint.org/docs/rules/arrow-spacing
      */
-    'arrow-spacing': [ 'error', { before: true, after: true }],
+    'arrow-spacing': ['error', {before: true, after: true}],
 
     /**
      * It doesn't check whether or not there is a valid `super()` call
@@ -76,7 +76,7 @@ module.exports = {
      * }
      * ```
      */
-    'generator-star-spacing': [ 'error', { before: false, after: true }],
+    'generator-star-spacing': ['error', {before: false, after: true}],
 
     /**
      * This rule disallows modifying variables of class declarations
@@ -94,7 +94,7 @@ module.exports = {
      * var x = a => (1 ? 2 : 3); // correct
      * ````
      */
-    'no-confusing-arrow': [ 'error', {
+    'no-confusing-arrow': ['error', {
       allowParens: true,
     }],
 
@@ -175,7 +175,7 @@ module.exports = {
      * };
      * ```
      */
-    'object-shorthand': [ 'error', 'always', {
+    'object-shorthand': ['error', 'always', {
       avoidQuotes: true,
       ignoreConstructors: false,
     }],
@@ -200,7 +200,7 @@ module.exports = {
      * console.log(a, b);
      * ```
      */
-    'prefer-const': [ 'error', {
+    'prefer-const': ['error', {
       destructuring: 'all',
       ignoreReadBeforeAssign: true,
     }],
@@ -263,6 +263,6 @@ module.exports = {
      * Enforce spacing after the `*` in `yield*` expressions
      * @see http://eslint.org/docs/rules/yield-star-spacing
      */
-    'yield-star-spacing': [ 'error', { before: false, after: true }],
+    'yield-star-spacing': ['error', {before: false, after: true}],
   },
 };

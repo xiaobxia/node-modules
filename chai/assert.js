@@ -2,8 +2,8 @@
  * Created by xiaobxia on 2017/8/24.
  */
 var assert = require('chai').assert
-    , foo = 'bar'
-    , beverages = { tea: [ 'chai', 'matcha', 'oolong' ] };
+  , foo = 'bar'
+  , beverages = {tea: ['chai', 'matcha', 'oolong']};
 
 assert.typeOf(foo, 'string'); // without optional message
 assert.typeOf(foo, 'string', 'foo is a string'); // with optional message

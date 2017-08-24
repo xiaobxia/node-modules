@@ -89,7 +89,7 @@ module.exports = {
      * ```
      */
     //要遵循大括号的约定
-    curly: [ 'error', 'multi-line' ],
+    curly: ['error', 'multi-line'],
 
     /**
      * Requires default case in switch statements.
@@ -115,7 +115,7 @@ module.exports = {
      * ```
      */
     //在switch中不要有default
-    'default-case': [ 'error', { commentPattern: '^no default$' }],
+    'default-case': ['error', {commentPattern: '^no default$'}],
 
     /**
      * Encouraging use of the dot notation style whenever possible
@@ -137,7 +137,7 @@ module.exports = {
      * ```
      */
     //尽量使用点
-    'dot-notation': [ 'error', { allowKeywords: true }],
+    'dot-notation': ['error', {allowKeywords: true}],
 
     /**
      * Doesn't enforce newline before and after dot
@@ -189,7 +189,7 @@ module.exports = {
      * ```
      */
     //强制使用全等，除了null
-    eqeqeq: [ 'error', 'allow-null' ],
+    eqeqeq: ['error', 'allow-null'],
 
     /**
      * Doesn't require filtering the results in the loop for
@@ -324,7 +324,7 @@ module.exports = {
      * }
      * ```
      */
-    'no-empty-function': [ 'error', {
+    'no-empty-function': ['error', {
       allow: [
         'arrowFunctions',
         'functions',
@@ -447,7 +447,7 @@ module.exports = {
      * Disallow labeled statements
      * @see http://eslint.org/docs/rules/no-labels
      */
-    'no-labels': [ 'error', { allowLoop: false, allowSwitch: false }],
+    'no-labels': ['error', {allowLoop: false, allowSwitch: false}],
 
     /**
      * Disallow unnecessary nested blocks
