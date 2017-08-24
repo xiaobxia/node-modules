@@ -9,7 +9,9 @@
 - ✔ 爬虫
 - ✔ xml
 ### 工具
+- ✔ karma
 - ✔ mocha
+- ✔ chai
 - ✔ co
 - ✔ eslint
 - ✔ 参数验证
