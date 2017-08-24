@@ -1,8 +1,9 @@
 /**
  * Created by xiaobxia on 2017/7/10.
  */
-
-const expect = require("chai").expect;
+const chai = require('chai');
+const expect = chai.expect;
+const should = chai.should()
 
 function add(x,y){
     return x+y;
