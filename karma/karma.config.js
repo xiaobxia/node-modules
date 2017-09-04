@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Thu Aug 24 2017 14:24:34 GMT+0800 (中国标准时间)
 
+//TODO 命令karma start ./karma/karma.config.js
+
 module.exports = function (config) {
   config.set({
 
@@ -26,7 +28,11 @@ module.exports = function (config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {},
+    //TODO 预处理
+    preprocessors: {
+      // 'coverage'
+      './**/*.js': ['webpack']
+    },
 
 
     // test results reporter to use
@@ -59,10 +65,21 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
+    //TODO 持续集成模式
     singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+    //TODO 添加webpack, 需要karma-webpack插件
+    webpack: {
+      module: {
+        loaders: [{
+          test: /\.js$/,
+          exclude: [/node_modules/],
+          loader: 'babel-loader'
+        }]
+      }
+    }
   })
 };

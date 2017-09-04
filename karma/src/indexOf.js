@@ -4,3 +4,4 @@
 var indexOf = function (array, index) {
   return array[index];
 };
+export default indexOf;

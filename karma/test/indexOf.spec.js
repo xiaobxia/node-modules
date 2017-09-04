@@ -5,6 +5,7 @@
 //需要karma start karma/karma.config.js启动
 
 //当前的环境就是浏览器的环境，所以不能用es6和模块系统
+import indexOf from '../src/indexOf'
 describe('indexOf', function () {
   //it声明测试实例
   it('["a","b"]索引1的位置是"b"', function () {
