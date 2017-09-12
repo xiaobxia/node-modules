@@ -17,6 +17,10 @@ function getData(page) {
       //let html = iconv.decode(body, 'gb2312');
       let $ = cheerio.load(body);
       let data = [];
+      $('').each(function(){
+        var $this = $(this);
+        data.push({});
+      });
       //do
       let filename = `./data/${page}.json`;
       //格式化json
