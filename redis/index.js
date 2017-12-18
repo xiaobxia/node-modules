@@ -16,8 +16,13 @@ client.on("error", function (err) {
  * 字符串类型，是二进制的，所以也可以放图片
  */
 client.set("string key", "string val", redis.print);
+client.setex("string ex", 5, 'string ex val', redis.print);
 
 client.get("string key", function (err, reply) {
+  // 如果key不见了，返回null
+  console.log(reply);
+});
+client.get("string ex", function (err, reply) {
   // 如果key不见了，返回null
   console.log(reply);
 });
